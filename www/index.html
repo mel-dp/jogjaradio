@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-  <title>Dirty P Radio App</title> 
+  <title>Dirty P Radio</title>
   <meta name="viewport" content="initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -64,14 +64,17 @@ function exitAppPopup() {
   				},
   				function() { // error callback
   					console.log("Media error");
+  					
   				},
   				function(status) {
   					///console.log("status: "+status);
   					mediaState = status;
   					if(status == Media.MEDIA_NONE) {
   						console.log("MEDIA_NONE");
+  						alert('media none');
   					} else if(status == Media.MEDIA_STARTING) {
   						console.log("MEDIA_STARTING");
+  						alert('media starting');
   						$.mobile.loading( 'show', {
   							text: 'buffering..',
   							textVisible: true,
@@ -100,8 +103,10 @@ function exitAppPopup() {
   function playAudio() {
   	if(mediaState != Media.MEDIA_STARTING && mediaState != Media.MEDIA_RUNNING) {
   		myMedia.play();
+  		alert('media not running or starting');
   		// Update myMedia position every second
           if (mediaTimer == null) {
+          	alert('media timer is null');
               mediaTimer = setInterval(function() {
                   // get myMedia position
                   myMedia.getCurrentPosition(
@@ -121,17 +126,19 @@ function exitAppPopup() {
           }
   	} else {
   		myMedia.pause();
+  		alert('paused');
   	}
   };
   function stopAudio() {
   	 myMedia.pause();
-  	//myMedia.stop();
+  	myMedia.stop();
   	//myMedia = new Audio ('');
   	clearInterval(mediaTimer);
   	mediaTimer = null;
   };
   function startAudio(streamingUrl) {
 		updateMedia(streamingUrl);
+		alert('started ' + streamingUrl);
 		playAudio();
   };
 	function showRadioMap() {
@@ -164,19 +171,19 @@ function exitAppPopup() {
 	</div><!-- /header -->
 
 	<div data-role="content" data-theme="a" data-content-theme="a">	
-		<h2>Dirty P Radio App</h2>
-		<p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is.</p>	
+		<h2>Don't Be Ordinary Be Dirty</h2>
+		<p>Please choose a stream.</p>	
 		<ul data-role="listview" data-inset="true" data-filter="false">
-			<li data-role="list-divider">Select Stream Quality</li>
+			<li data-role="list-divider">Availible Audio Streams</li>
 			<li><a href="#dirtyp192">Listen - 192kbps Stream</a></li>
 			<li><a href="#dirtyp">Listen - 128kbps Stream</a></li>
 		</ul>
 		
 		<div data-role="collapsible" data-theme="a" data-content-theme="a">
 			<h3>Help choosing stream</h3>
-			<p>Depending on the strength of your connection on you rmobile device you can choose different stream qualities
+			<p>Depending on the strength of your connection on your mobile device you can choose different stream qualities
 			for example 128kbps is best suited for a stonger networks and 64kbps will sound more distorted while 192kbps will sound clearer.
-			You can adjust your prefered stream quility at any time, Choose the stream that plays best on your connection without any audio drops. </p>
+			You can adjust your prefered stream quality at any time, Choose the stream that plays best on your connection without any audio drops. </p>
 		</div>
 	</div><!-- /content -->
 	
@@ -198,13 +205,12 @@ function exitAppPopup() {
 
 	<div data-role="content" data-theme="a" data-content-theme="a"> 
 		<div class="ui-body">
-			<h1>Radio Map</h1>
 			<p>This isn't your typical internet radio station...<br>
 If there were only two words to attempt to describe Dirty P Radio, one would have to be "Unique" and the other would be "Diverse". Our programming spans musical genres, from Pop to Polka and U2 to Underground. Our talk shows in the works will have everything from Sports Radio and to Comedy. We have built Dirty P Radio to be different.<br>
 Bringing you more variety, and more live web-cast radio programming then those other radio stations, Dirty P Radio has something to suit your every mood...<br>
 Dirty P Radio is a station with great entertainment for you, your friends, and family! ( and we're not gonna stretch the truth, for ours too) so please enjoy our evolving lineup of shows and drop us a line with any suggestions. <br>-The Dirty P Radio Team <br>
-Check out our website  <a href="http://dirtypradio.com">here</a> </p>
-			<a href="#" target="_blank" data-role="button" onclick="showRadioMap();">Show Map</a>
+<a target="_blank" href="http://dirtypradio.com">Check out our website here</a> </p>
+			<a href="#" data-role="button" onclick="showRadioMap();">Show Map</a>
 			<div id="map" style="width: 320px; height: 220px"></div>
 		</div><!-- /themed container -->
 	</div><!-- /content -->
@@ -228,7 +234,7 @@ Check out our website  <a href="http://dirtypradio.com">here</a> </p>
 	</div><!-- /header -->
 
 	<div data-role="content">
-		<h1>Dirty P Radio 192</h1>
+		<h1>192kbps Stream</h1>
 		<p>Don't Be Ordinary Be Dirty</p>	
 		
 		<a href="#" data-role="button" onclick="startAudio('http://162.221.184.92:8000/192');">Play</a>
@@ -253,18 +259,16 @@ Check out our website  <a href="http://dirtypradio.com">here</a> </p>
 
 	<div data-role="header" data-position="fixed" data-theme="a" data-content-theme="a">
 		<a href="#main" data-role="button">Back</a>
-		<h1>Dirty P Radio 128</h1>
+		<h1>Dirty P Radio</h1>
 	</div><!-- /header -->
 
 	<div data-role="content" data-theme="a" data-content-theme="a">
-		<h1>Dirty P Radio 128</h1>
+		<h1>128kbps Stream</h1>
 		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
 		
 		<a href="#" data-role="button" onclick="startAudio('http://162.221.184.92:8000/128');">Play</a>
 		<a href="#" data-role="button" onclick="stopAudio();">Stop</a>
 		<div data-role="collapsible" data-theme="a" data-content-theme="a">
-			<h3>I'm a themed collapsible with a themed content</h3>
-			<p>I have <code> data-content-theme</code> attribute set manually on my container to set the color to match the content block I'm in. </p>
 		</div>
 		
 	</div><!-- /content -->
