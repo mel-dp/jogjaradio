@@ -22,22 +22,23 @@
 	    console.log('ready');
   };
   
+  var myMedia = null;
+  var mediaTimer = null;
+  var mediaState = 0;
   	// Auto Start
 		window.onload = function() { playStream(); };
 		// Code from http://www.joeldare.com/wiki/play_an_mp3_audio_stream_in_phonegap
 		function playStream() {
 		  try {
-		    var myaudio = new Audio('http://air.dirtypradio.com:8000/192');
-		    myaudio.id = 'playerMyAdio';
-		    myaudio.play();
+		    var myMedia = new Audio('http://air.dirtypradio.com:8000/192');
+		    myMedia.id = 'playerMyAudio';
+		    myMedia.play();
 		  } catch (e) {
 		    alert('no audio support!');
 		  }
 		}
   
-  var myMedia = null;
-  var mediaTimer = null;
-  var mediaState = 0;
+
   function updateMedia(radioUrl) {
   	if(myMedia != null) {
   		myMedia.release();
