@@ -31,7 +31,7 @@
 		function playStream() {
 		  try {
 		    var myMedia = new Audio('http://air.dirtypradio.com:8000/192');
-		    myMedia.id = 'playerMyAudio';
+		  //  myMedia.id = 'playerMyAudio';
 		    myMedia.play();
 		  } catch (e) {
 		    alert('no audio support!');
@@ -190,8 +190,8 @@
 	<div data-role="footer" data-position="fixed">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#main" data-icon="grid" data-transition="flip" data-prefetch data-direction="reverse">Streaming</a></li>
-				<li><a href="#maps" data-icon="home" data-transition="flip" data-prefetch class="ui-btn-active ui-state-persist">Maps</a></li>
+				<li><a href="#main" data-icon="grid" data-transition="flip" data-prefetch data-direction="reverse">Radio</a></li>
+				<li><a href="#maps" data-icon="home" data-transition="flip" data-prefetch class="ui-btn-active ui-state-persist">About</a></li>
 			</ul>
 		</div>
 	</div>
