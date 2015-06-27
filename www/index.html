@@ -61,9 +61,11 @@ function exitAppPopup() {
   	myMedia = new Audio(radioUrl,
   				function() { // success callback
   					console.log("Media instance success.");
+  					alert('Media success');
   				},
   				function() { // error callback
   					console.log("Media error");
+  						alert('Media error');
   					
   				},
   				function(status) {
@@ -101,7 +103,7 @@ function exitAppPopup() {
   				});
   };
   function playAudio() {
-  	alert('play ' + mediaState);
+  	alert('play ' + mediaState + ' ms ' + Media.MEDIA_STARTING + ' mr ' + Media.MEDIA_RUNNING);
   	if(mediaState != Media.MEDIA_STARTING && mediaState != Media.MEDIA_RUNNING) {
   		myMedia.play();
   		alert('media not running or starting');
