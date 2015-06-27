@@ -16,6 +16,19 @@
   //
   document.addEventListener("deviceready", onDeviceReady, false);
 
+function exitAppPopup() {
+    navigator.notification.confirm(
+          'Exit App ' + device.cordova + ' Application?'
+        , function(button) {
+              if (button == 2) {
+                  navigator.app.exitApp();
+              }
+          }
+        , 'Exit'
+        , 'No,Yes'
+    );  
+    return false;
+}
   // Cordova is ready
   //
   function onDeviceReady() {
