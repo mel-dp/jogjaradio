@@ -101,12 +101,12 @@ function exitAppPopup() {
   				});
   };
   function playAudio() {
+  	alert('play ' + mediaState);
   	if(mediaState != Media.MEDIA_STARTING && mediaState != Media.MEDIA_RUNNING) {
   		myMedia.play();
   		alert('media not running or starting');
   		// Update myMedia position every second
           if (mediaTimer == null) {
-          	alert('media timer is null');
               mediaTimer = setInterval(function() {
                   // get myMedia position
                   myMedia.getCurrentPosition(
@@ -130,7 +130,7 @@ function exitAppPopup() {
   	}
   };
   function stopAudio() {
-  	 myMedia.pause();
+  	// myMedia.pause();
   	myMedia.stop();
   	//myMedia = new Audio ('');
   	clearInterval(mediaTimer);
