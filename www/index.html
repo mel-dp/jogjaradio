@@ -110,8 +110,9 @@
   	}
   };
   function stopAudio() {
-  	myMedia.stop();
-  	myMedia = new Audio ('');
+  	 myMedia.pause();
+  	//myMedia.stop();
+  	//myMedia = new Audio ('');
   	clearInterval(mediaTimer);
   	mediaTimer = null;
   };
@@ -166,8 +167,8 @@
 	<div data-role="footer" data-position="fixed">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#main" data-icon="grid" data-transition="flip" data-prefetch class="ui-btn-active ui-state-persist">Streaming</a></li>
-				<li><a href="#maps" data-icon="home" data-transition="flip" data-prefetch>Maps</a></li>
+				<li><a href="#main" data-icon="grid" data-transition="flip" data-prefetch class="ui-btn-active ui-state-persist">Radio</a></li>
+				<li><a href="#maps" data-icon="home" data-transition="flip" data-prefetch>About</a></li>
 			</ul>
 		</div>
 	</div><!-- /footer -->
@@ -182,8 +183,12 @@
 	<div data-role="content"> 
 		<div class="ui-body">
 			<h1>Radio Map</h1>
-			<p>This is a paragraph that contains <strong>strong</strong>, <em>emphasized</em> and <a href="index.html">linked</a> text.</p>
-			<a href="#" data-role="button" onclick="showRadioMap();">show map</a>
+			<p>This isn’t your typical internet radio station…
+If there were only two words to attempt to describe Dirty P Radio, one would have to be “Unique” and the other would be “Diverse. Our programming spans musical genres, from Pop to Polka and U2 to Underground. Our talk shows in the works will have everything from Sports Radio and to Comedy. We have built Dirty P Radio to be different.
+
+Bringing you more variety, and more live web-cast radio programming then those other radio stations, Dirty P Radio has something to suit your every mood…Bringing you more variety, and more live web-cast radio programming then those other radio stations, Dirty P Radio has something to suit your every mood… Dirty P Radio is a station with great entertainment for you, your friends, and family! ( and we’re not gonna stretch the truth, for ours too) so please enjoy our evolving lineup of shows and drop us a line with any suggestions. -The Dirty P Radio Team <br>
+Check out our Full Site  <a href="http://dirtypradio.com">here</a> </p>
+			<a href="#" data-role="button" onclick="showRadioMap();">Show Map</a>
 			<div id="map" style="width: 320px; height: 320px"></div>
 		</div><!-- /themed container -->
 	</div><!-- /content -->
