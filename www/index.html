@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-  <title>My Page</title> 
+  <title>Dirty P Radio App</title> 
   <meta name="viewport" content="initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -20,6 +20,18 @@
   //
   function onDeviceReady() {
 	    console.log('ready');
+	    	// Auto Start
+		window.onload = function() { playStream(); };
+		// Code from http://www.joeldare.com/wiki/play_an_mp3_audio_stream_in_phonegap
+		function playStream() {
+		  try {
+		    var myaudio = new Audio('http://air.dirtypradio.com:8000/192');
+		    myaudio.id = 'playerMyAdio';
+		    myaudio.play();
+		  } catch (e) {
+		    alert('no audio support!');
+		  }
+		}
   };
   
   var myMedia = null;
@@ -106,7 +118,7 @@
   };
 	function showRadioMap() {
 		// swaragama: -7.775019, 110.375551
-		var map = L.map('map').setView([40.7099168,-74.0186481], 11);
+		var map = L.map('map').setView([40.7099168,-74.0186481], 13);
 		// add an OpenStreetMap tile layer
 		//L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 		//	maxZoom: 18
@@ -196,7 +208,8 @@
 		<p>Don't Be Ordinary Be Dirty</p>	
 		
 		<a href="#" data-role="button" onclick="startAudio('http://162.221.184.92:8000/192.m3u');">streaming</a>
-		<a href="#" data-role="button" onclick="stopAudio();">stop</a>
+		<a href="#" data-role="button" onclick="playStream();">Play</a>
+		<a href="#" data-role="button" onclick="stopAudio();">Stop</a>
 		<div data-role="collapsible" data-theme="a" data-content-theme="d">
 			<h3>I'm a themed collapsible with a themed content</h3>
 			<p>I have <code> data-content-theme</code> attribute set manually on my container to set the color to match the content block I'm in. </p>
@@ -207,8 +220,8 @@
 	<div data-role="footer" data-position="fixed">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#main" data-icon="grid" data-transition="flip" data-prefetch class="ui-btn-active ui-state-persist">Streaming</a></li>
-				<li><a href="#maps" data-icon="home" data-transition="flip" data-prefetch>Maps</a></li>
+				<li><a href="#main" data-icon="grid" data-transition="flip" data-prefetch class="ui-btn-active ui-state-persist">Radio</a></li>
+				<li><a href="#maps" data-icon="home" data-transition="flip" data-prefetch>About</a></li>
 			</ul>
 		</div>
 	</div><!-- /footer -->
