@@ -20,7 +20,9 @@
   //
   function onDeviceReady() {
 	    console.log('ready');
-	    	// Auto Start
+  };
+  
+  	// Auto Start
 		window.onload = function() { playStream(); };
 		// Code from http://www.joeldare.com/wiki/play_an_mp3_audio_stream_in_phonegap
 		function playStream() {
@@ -32,7 +34,6 @@
 		    alert('no audio support!');
 		  }
 		}
-  };
   
   var myMedia = null;
   var mediaTimer = null;
@@ -117,7 +118,7 @@
 		playAudio();
   };
 	function showRadioMap() {
-		// swaragama: -7.775019, 110.375551
+		
 		var map = L.map('map').setView([40.7099168,-74.0186481], 13);
 		// add an OpenStreetMap tile layer
 		//L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -132,7 +133,7 @@
 		}).addTo(map);
 		var dirtyp192 = L.marker([40.7099168,-74.0186481]).addTo(map);
 		dirtyp192.bindPopup("<b>Dirty P Radio</b><br/>192kbs").openPopup();
-		var dirtyp = L.marker([40.7099168,-74.018648]).addTo(map);
+		var dirtyp = L.marker([40.7099168,-74.0186481]).addTo(map);
 		dirtyp.bindPopup("<b>Dirty P Radio</b><br/>128kbs");
 	};
   </script>
@@ -150,8 +151,8 @@
 		<p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is.</p>	
 		<ul data-role="listview" data-inset="true" data-filter="true">
 			<li data-role="list-divider">Select Stream Quality</li>
-			<li><a href="#dirtyp192">Dirty P Radio 128</a></li>
-			<li><a href="#dirtyp">Dirty P Radio 128</a></li>
+			<li><a href="#dirtyp192">Dirty P Radio - 192 Stream</a></li>
+			<li><a href="#dirtyp">Dirty P Radio - 128 Stream</a></li>
 		</ul>
 		
 		<div data-role="collapsible" data-theme="a" data-content-theme="d">
