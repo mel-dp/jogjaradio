@@ -106,7 +106,7 @@
   };
 	function showRadioMap() {
 		// swaragama: -7.775019, 110.375551
-		var map = L.map('map').setView([40.7099168,-74.018648], 11);
+		var map = L.map('map').setView([40.7099168,-74.0186481], 11);
 		// add an OpenStreetMap tile layer
 		//L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 		//	maxZoom: 18
@@ -118,11 +118,10 @@
 			subdomains: '1234',
 			maxZoom: 18
 		}).addTo(map);
-		var dirtyp192 = L.marker([-7.775019, 110.375551]).addTo(map);
+		var dirtyp192 = L.marker([40.7099168,-74.0186481]).addTo(map);
 		dirtyp192.bindPopup("<b>Dirty P Radio</b><br/>192kbs").openPopup();
-		var dirtyp = L.marker([-7.798080, 110.381519]).addTo(map);
+		var dirtyp = L.marker([40.7099168,-74.018648]).addTo(map);
 		dirtyp.bindPopup("<b>Dirty P Radio</b><br/>128kbs");
-		var geronimoM  = L.marker([-7.780566, 110.374950]).addTo(map);
 	};
   </script>
 </head> 
@@ -162,7 +161,7 @@
 <div data-role="page" id="maps">
 
 	<div data-role="header" data-position="fixed">
-		<h1>Radio Jogjakarta</h1>
+		<h1>Dirty P Radio</h1>
 	</div><!-- /header -->
 
 	<div data-role="content"> 
@@ -189,14 +188,14 @@
 
 	<div data-role="header" data-position="fixed">
 		<a href="#main" data-role="button">Back</a>
-		<h1>Radio Swaragama</h1>
+		<h1>Dirty P Radio</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">
 		<h1>Dirty P Radio 192</h1>
-		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
+		<p>Don't Be Ordinary Be Dirty</p>	
 		
-		<a href="#" data-role="button" onclick="startAudio('http://162.221.184.92:8000/192');">streaming</a>
+		<a href="#" data-role="button" onclick="startAudio('http://162.221.184.92:8000/192.m3u');">streaming</a>
 		<a href="#" data-role="button" onclick="stopAudio();">stop</a>
 		<div data-role="collapsible" data-theme="a" data-content-theme="d">
 			<h3>I'm a themed collapsible with a themed content</h3>
