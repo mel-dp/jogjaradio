@@ -44,7 +44,7 @@
   		myMedia.release();
   	}
 //     	document.getElementById('audio_title').innerHTML = radioUrl;
-  	myMedia = new Media(radioUrl,
+  	myMedia = new Audio(radioUrl,
   				function() { // success callback
   					console.log("Media instance success.");
   				},
@@ -111,6 +111,7 @@
   };
   function stopAudio() {
   	myMedia.stop();
+  	myMedia = new Audio ('');
   	clearInterval(mediaTimer);
   	mediaTimer = null;
   };
