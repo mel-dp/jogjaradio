@@ -106,7 +106,7 @@
   };
 	function showRadioMap() {
 		// swaragama: -7.775019, 110.375551
-		var map = L.map('map').setView([-7.781019, 110.373551], 13);
+		var map = L.map('map').setView([40.7099168,-74.018648], 11);
 		// add an OpenStreetMap tile layer
 		//L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 		//	maxZoom: 18
@@ -118,20 +118,11 @@
 			subdomains: '1234',
 			maxZoom: 18
 		}).addTo(map);
-		var swaragamaM = L.marker([-7.775019, 110.375551]).addTo(map);
-		swaragamaM.bindPopup("<b>Swaragama</b><br/>101.7 FM.").openPopup();
-		var iradioM = L.marker([-7.798080, 110.381519]).addTo(map);
-		iradioM.bindPopup("<b>i-Radio Jogja</b><br/>88.7 FM.");
+		var dirtyp192 = L.marker([-7.775019, 110.375551]).addTo(map);
+		dirtyp192.bindPopup("<b>Dirty P Radio</b><br/>192kbs").openPopup();
+		var dirtyp = L.marker([-7.798080, 110.381519]).addTo(map);
+		dirtyp.bindPopup("<b>Dirty P Radio</b><br/>128kbs");
 		var geronimoM  = L.marker([-7.780566, 110.374950]).addTo(map);
-		geronimoM.bindPopup("<b>Geronimo</b><br/>106.1 FM.");
-		var pramborsM = L.marker([-7.797132, 110.357076]).addTo(map);
-		pramborsM.bindPopup("<b>Prambors</b><br/>95.8 FM.");
-		var unisiM = L.marker([-7.777269, 110.393057]).addTo(map);
-		unisiM.bindPopup("<b>Unisi</b><br/>104.5 FM.");
-		var retjobuntungM = L.marker([-7.799271, 110.370889]).addTo(map);
-		retjobuntungM.bindPopup("<b>Retjo Buntung</b><br/>99.4 FM.");
-		var radioanakM = L.marker([-7.801411, 110.367538]).addTo(map);
-		radioanakM.bindPopup("<b>Radio Anak Jogja</b><br/>99.9 FM.");
 	};
   </script>
 </head> 
@@ -140,21 +131,16 @@
 <div data-role="page" id="main">
 
 	<div data-role="header" data-position="fixed">
-		<h1>Radio Jogjakarta</h1>
+		<h1>Dirty P Radio</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<h2>Jogja Radio App</h2>
+		<h2>Dirty P Radio App</h2>
 		<p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is.</p>	
 		<ul data-role="listview" data-inset="true" data-filter="true">
-			<li data-role="list-divider">Radio's name</li>
-			<li><a href="#swaragama">Swaragama 101.7 FM</a></li>
-			<li><a href="#iradio">i-Radio Jogja 88.7 FM</a></li>
-			<li><a href="#geronimo">Geronimo 106.1 FM</a></li>
-			<li><a href="#prambors">Prambors 95.8 FM</a></li>
-			<li><a href="#unisi">Unisi 104.5 FM</a></li>
-			<li><a href="#retjobuntung">Retjo Buntung 99.4 FM</a></li>
-			<li><a href="#radioanak">Radio Anak Jogja 99.9 FM</a></li>
+			<li data-role="list-divider">Select Stream Quality</li>
+			<li><a href="#dirtyp192">Dirty P Radio 128</a></li>
+			<li><a href="#dirtyp">Dirty P Radio 128</a></li>
 		</ul>
 		
 		<div data-role="collapsible" data-theme="a" data-content-theme="d">
@@ -181,7 +167,7 @@
 
 	<div data-role="content"> 
 		<div class="ui-body">
-			<h1>Jogja Radio Maps</h1>
+			<h1>Radio Map</h1>
 			<p>This is a paragraph that contains <strong>strong</strong>, <em>emphasized</em> and <a href="index.html">linked</a> text.</p>
 			<a href="#" data-role="button" onclick="showRadioMap();">show map</a>
 			<div id="map" style="width: 320px; height: 320px"></div>
@@ -199,7 +185,7 @@
 
 </div><!-- /page maps -->
 
-<div data-role="page" id="swaragama">
+<div data-role="page" id="dirtyp192">
 
 	<div data-role="header" data-position="fixed">
 		<a href="#main" data-role="button">Back</a>
@@ -207,10 +193,10 @@
 	</div><!-- /header -->
 
 	<div data-role="content">
-		<h1>Radio Swaragama 101.7 FM</h1>
+		<h1>Dirty P Radio 192</h1>
 		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
 		
-		<a href="#" data-role="button" onclick="startAudio('http://173.224.124.217:8160/');">streaming</a>
+		<a href="#" data-role="button" onclick="startAudio('http://162.221.184.92:8000/192');">streaming</a>
 		<a href="#" data-role="button" onclick="stopAudio();">stop</a>
 		<div data-role="collapsible" data-theme="a" data-content-theme="d">
 			<h3>I'm a themed collapsible with a themed content</h3>
@@ -227,19 +213,19 @@
 			</ul>
 		</div>
 	</div><!-- /footer -->
-</div><!-- /page swaragama -->
-<div data-role="page" id="iradio">
+</div><!-- /page dirtyp192 -->
+<div data-role="page" id="dirtyp">
 
 	<div data-role="header" data-position="fixed">
 		<a href="#main" data-role="button">Back</a>
-		<h1>i-Radio Jogja</h1>
+		<h1>Dirty P Radio 128</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">
-		<h1>i-Radio Jogja 88.7 FM</h1>
+		<h1>Dirty P Radio 128</h1>
 		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
 		
-		<a href="#" data-role="button" onclick="startAudio('http://61.8.70.166:8001/irfm-jgy');">streaming</a>
+		<a href="#" data-role="button" onclick="startAudio('http://162.221.184.92:8000/128');">streaming</a>
 		<a href="#" data-role="button" onclick="stopAudio();">stop</a>
 		<div data-role="collapsible" data-theme="a" data-content-theme="d">
 			<h3>I'm a themed collapsible with a themed content</h3>
@@ -256,152 +242,7 @@
 			</ul>
 		</div>
 	</div><!-- /footer -->
-</div><!-- /page iradio -->
-<div data-role="page" id="geronimo">
-
-	<div data-role="header" data-position="fixed">
-		<a href="#main" data-role="button">Back</a>
-		<h1>Radio Geronimo</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">
-		<h1>Radio Geronimo 106.1 FM</h1>
-		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
-		
-		<a href="#" data-role="button" onclick="startAudio('http://live2.indostreamserver.com:8018/');">streaming</a>
-		<a href="#" data-role="button" onclick="stopAudio();">stop</a>
-		<div data-role="collapsible" data-theme="a" data-content-theme="d">
-			<h3>I'm a themed collapsible with a themed content</h3>
-			<p>I have <code> data-content-theme</code> attribute set manually on my container to set the color to match the content block I'm in. </p>
-		</div>
-		
-	</div><!-- /content -->
-	
-	<div data-role="footer" data-position="fixed">
-		<div data-role="navbar">
-			<ul>
-				<li><a href="#main" data-icon="grid" data-transition="flip" data-prefetch class="ui-btn-active ui-state-persist">Streaming</a></li>
-				<li><a href="#maps" data-icon="home" data-transition="flip" data-prefetch>Maps</a></li>
-			</ul>
-		</div>
-	</div><!-- /footer -->
-</div><!-- /page geronimo -->
-<div data-role="page" id="unisi">
-
-	<div data-role="header" data-position="fixed">
-		<a href="#main" data-role="button">Back</a>
-		<h1>Radio Unisi</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">
-		<h1>Radio Unisi 104.5 FM</h1>
-		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
-		
-		<a href="#" data-role="button" onclick="startAudio('http://202.162.32.23:8000/stream/1/');">streaming</a>
-		<a href="#" data-role="button" onclick="stopAudio();">stop</a>
-		<div data-role="collapsible" data-theme="a" data-content-theme="d">
-			<h3>I'm a themed collapsible with a themed content</h3>
-			<p>I have <code> data-content-theme</code> attribute set manually on my container to set the color to match the content block I'm in. </p>
-		</div>
-		
-	</div><!-- /content -->
-	
-	<div data-role="footer" data-position="fixed">
-		<div data-role="navbar">
-			<ul>
-				<li><a href="#main" data-icon="grid" data-transition="flip" data-prefetch class="ui-btn-active ui-state-persist">Streaming</a></li>
-				<li><a href="#maps" data-icon="home" data-transition="flip" data-prefetch>Maps</a></li>
-			</ul>
-		</div>
-	</div><!-- /footer -->
-</div><!-- /page unisi -->
-<div data-role="page" id="prambors">
-
-	<div data-role="header" data-position="fixed">
-		<a href="#main" data-role="button">Back</a>
-		<h1>Radio Prambors</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">
-		<h1>Radio Prambors 95.8 FM</h1>
-		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
-		
-		<a href="#" data-role="button" onclick="startAudio('http://stream.masima.co.id:8000/pyog');">streaming</a>
-		<a href="#" data-role="button" onclick="stopAudio();">stop</a>
-		<div data-role="collapsible" data-theme="a" data-content-theme="d">
-			<h3>I'm a themed collapsible with a themed content</h3>
-			<p>I have <code> data-content-theme</code> attribute set manually on my container to set the color to match the content block I'm in. </p>
-		</div>
-		
-	</div><!-- /content -->
-	
-	<div data-role="footer" data-position="fixed">
-		<div data-role="navbar">
-			<ul>
-				<li><a href="#main" data-icon="grid" data-transition="flip" data-prefetch class="ui-btn-active ui-state-persist">Streaming</a></li>
-				<li><a href="#maps" data-icon="home" data-transition="flip" data-prefetch>Maps</a></li>
-			</ul>
-		</div>
-	</div><!-- /footer -->
-</div><!-- /page prambors -->
-<div data-role="page" id="retjobuntung">
-
-	<div data-role="header" data-position="fixed">
-		<a href="#main" data-role="button">Back</a>
-		<h1>Radio Retjo Buntung</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">
-		<h1>Radio Retjo Buntung 99.4 FM</h1>
-		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
-		
-		<a href="#" data-role="button" onclick="startAudio('http://173.224.124.217:8110/');">streaming</a>
-		<a href="#" data-role="button" onclick="stopAudio();">stop</a>
-		<div data-role="collapsible" data-theme="a" data-content-theme="d">
-			<h3>I'm a themed collapsible with a themed content</h3>
-			<p>I have <code> data-content-theme</code> attribute set manually on my container to set the color to match the content block I'm in. </p>
-		</div>
-		
-	</div><!-- /content -->
-	
-	<div data-role="footer" data-position="fixed">
-		<div data-role="navbar">
-			<ul>
-				<li><a href="#main" data-icon="grid" data-transition="flip" data-prefetch class="ui-btn-active ui-state-persist">Streaming</a></li>
-				<li><a href="#maps" data-icon="home" data-transition="flip" data-prefetch>Maps</a></li>
-			</ul>
-		</div>
-	</div><!-- /footer -->
-</div><!-- /page retjobuntung -->
-<div data-role="page" id="radioanak">
-
-	<div data-role="header" data-position="fixed">
-		<a href="#main" data-role="button">Back</a>
-		<h1>Radio Anak</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">
-		<h1>Radio Anak Jogja 99.9 FM</h1>
-		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
-		
-		<a href="#" data-role="button" onclick="startAudio('http://202.169.226.76:8000/radioanakjogja');">streaming</a>
-		<a href="#" data-role="button" onclick="stopAudio();">stop</a>
-		<div data-role="collapsible" data-theme="a" data-content-theme="d">
-			<h3>I'm a themed collapsible with a themed content</h3>
-			<p>I have <code> data-content-theme</code> attribute set manually on my container to set the color to match the content block I'm in. </p>
-		</div>
-		
-	</div><!-- /content -->
-	
-	<div data-role="footer" data-position="fixed">
-		<div data-role="navbar">
-			<ul>
-				<li><a href="#main" data-icon="grid" data-transition="flip" data-prefetch class="ui-btn-active ui-state-persist">Streaming</a></li>
-				<li><a href="#maps" data-icon="home" data-transition="flip" data-prefetch>Maps</a></li>
-			</ul>
-		</div>
-	</div><!-- /footer -->
-</div><!-- /page radioanak -->
+</div><!-- /page dirtyp -->
 
 
 </body>
