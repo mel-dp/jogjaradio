@@ -38,12 +38,13 @@ function exitAppPopup() {
   var myMedia = null;
   var mediaTimer = null;
   var mediaState = 0;
+  var media2Play = null;
   	// Auto Start
-		window.onload = function() { playStream(); };
+	//	window.onload = function() { playStream(media2Play); };
 		// Code from http://www.joeldare.com/wiki/play_an_mp3_audio_stream_in_phonegap
-		function playStream() {
+		function playStream(media2Play) {
 		  try {
-		    var myMedia = new Audio('http://air.dirtypradio.com:8000/192');
+		    var myMedia = new Audio(media2Play);
 		  //  myMedia.id = 'playerMyAudio';
 		    myMedia.play();
 		  } catch (e) {
@@ -135,7 +136,7 @@ function exitAppPopup() {
   };
 	function showRadioMap() {
 		
-		var map = L.map('map').setView([40.7099168,-74.0186481], 13);
+		var map = L.map('map').setView([40.7099168,-74.018648], 13);
 		// add an OpenStreetMap tile layer
 		//L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 		//	maxZoom: 18
@@ -147,9 +148,9 @@ function exitAppPopup() {
 			subdomains: '1234',
 			maxZoom: 18
 		}).addTo(map);
-		var dirtyp192 = L.marker([40.7099168,-74.0186481]).addTo(map);
+		var dirtyp192 = L.marker([40.7099168,-74.018648]).addTo(map);
 		dirtyp192.bindPopup("<b>Dirty P Radio</b><br/>192kbs").openPopup();
-		var dirtyp = L.marker([40.7099168,-74.0186481]).addTo(map);
+		var dirtyp = L.marker([40.7099168,-74.018648]).addTo(map);
 		dirtyp.bindPopup("<b>Dirty P Radio</b><br/>128kbs");
 	};
   </script>
@@ -167,13 +168,15 @@ function exitAppPopup() {
 		<p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is.</p>	
 		<ul data-role="listview" data-inset="true" data-filter="true">
 			<li data-role="list-divider">Select Stream Quality</li>
-			<li><a href="#dirtyp192">Dirty P Radio - 192 Stream</a></li>
-			<li><a href="#dirtyp">Dirty P Radio - 128 Stream</a></li>
+			<li><a href="#dirtyp192">Listen - 192kbps Stream</a></li>
+			<li><a href="#dirtyp">Listen - 128kbps Stream</a></li>
 		</ul>
 		
-		<div data-role="collapsible" data-theme="a" data-content-theme="d">
-			<h3>I'm a themed collapsible with a themed content</h3>
-			<p>I have <code> data-content-theme</code> attribute set manually on my container to set the color to match the content block I'm in. </p>
+		<div data-role="collapsible" data-theme="a" data-content-theme="a">
+			<h3>Help choosing stream</h3>
+			<p>Depending on the strength of your connection on you rmobile device you can choose different stream qualities
+			for example 128kbps is best suited for a stonger networks and 64kbps will sound more distorted while 192kbps will sound clearer.
+			You can adjust your prefered stream quility at any time, Choose the stream that plays best on your connection without any audio drops. </p>
 		</div>
 	</div><!-- /content -->
 	
@@ -197,12 +200,12 @@ function exitAppPopup() {
 		<div class="ui-body">
 			<h1>Radio Map</h1>
 			<p>This isn’t your typical internet radio station…
-If there were only two words to attempt to describe Dirty P Radio, one would have to be “Unique” and the other would be “Diverse. Our programming spans musical genres, from Pop to Polka and U2 to Underground. Our talk shows in the works will have everything from Sports Radio and to Comedy. We have built Dirty P Radio to be different.
-
-Bringing you more variety, and more live web-cast radio programming then those other radio stations, Dirty P Radio has something to suit your every mood…Bringing you more variety, and more live web-cast radio programming then those other radio stations, Dirty P Radio has something to suit your every mood… Dirty P Radio is a station with great entertainment for you, your friends, and family! ( and we’re not gonna stretch the truth, for ours too) so please enjoy our evolving lineup of shows and drop us a line with any suggestions. -The Dirty P Radio Team <br>
-Check out our Full Site  <a href="http://dirtypradio.com">here</a> </p>
-			<a href="#" data-role="button" onclick="showRadioMap();">Show Map</a>
-			<div id="map" style="width: 320px; height: 320px"></div>
+If there were only two words to attempt to describe Dirty P Radio, one would have to be "Unique" and the other would be "Diverse". Our programming spans musical genres, from Pop to Polka and U2 to Underground. Our talk shows in the works will have everything from Sports Radio and to Comedy. We have built Dirty P Radio to be different.<br>
+Bringing you more variety, and more live web-cast radio programming then those other radio stations, Dirty P Radio has something to suit your every mood...<br>
+Dirty P Radio is a station with great entertainment for you, your friends, and family! ( and we’re not gonna stretch the truth, for ours too) so please enjoy our evolving lineup of shows and drop us a line with any suggestions. <br>-The Dirty P Radio Team <br>
+Check out our website  <a href="http://dirtypradio.com">here</a> </p>
+			<a href="#" target="_blank" data-role="button" onclick="showRadioMap();">Show Map</a>
+			<div id="map" style="width: 320px; height: 220px"></div>
 		</div><!-- /themed container -->
 	</div><!-- /content -->
 
@@ -228,10 +231,9 @@ Check out our Full Site  <a href="http://dirtypradio.com">here</a> </p>
 		<h1>Dirty P Radio 192</h1>
 		<p>Don't Be Ordinary Be Dirty</p>	
 		
-		<a href="#" data-role="button" onclick="startAudio('http://162.221.184.92:8000/192.m3u');">streaming</a>
-		<a href="#" data-role="button" onclick="playStream();">Play</a>
+		<a href="#" data-role="button" onclick="startAudio('http://162.221.184.92:8000/192');">Play</a>
 		<a href="#" data-role="button" onclick="stopAudio();">Stop</a>
-		<div data-role="collapsible" data-theme="a" data-content-theme="d">
+		<div data-role="collapsible" data-theme="a" data-content-theme="a">
 			<h3>I'm a themed collapsible with a themed content</h3>
 			<p>I have <code> data-content-theme</code> attribute set manually on my container to set the color to match the content block I'm in. </p>
 		</div>
@@ -258,9 +260,9 @@ Check out our Full Site  <a href="http://dirtypradio.com">here</a> </p>
 		<h1>Dirty P Radio 128</h1>
 		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
 		
-		<a href="#" data-role="button" onclick="startAudio('http://162.221.184.92:8000/128');">streaming</a>
-		<a href="#" data-role="button" onclick="stopAudio();">stop</a>
-		<div data-role="collapsible" data-theme="a" data-content-theme="d">
+		<a href="#" data-role="button" onclick="startAudio('http://162.221.184.92:8000/128');">Play</a>
+		<a href="#" data-role="button" onclick="stopAudio();">Stop</a>
+		<div data-role="collapsible" data-theme="a" data-content-theme="a">
 			<h3>I'm a themed collapsible with a themed content</h3>
 			<p>I have <code> data-content-theme</code> attribute set manually on my container to set the color to match the content block I'm in. </p>
 		</div>
@@ -270,8 +272,8 @@ Check out our Full Site  <a href="http://dirtypradio.com">here</a> </p>
 	<div data-role="footer" data-position="fixed">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#main" data-icon="grid" data-transition="flip" data-prefetch class="ui-btn-active ui-state-persist">Streaming</a></li>
-				<li><a href="#maps" data-icon="home" data-transition="flip" data-prefetch>Maps</a></li>
+				<li><a href="#main" data-icon="grid" data-transition="flip" data-prefetch class="ui-btn-active ui-state-persist">Radio</a></li>
+				<li><a href="#maps" data-icon="home" data-transition="flip" data-prefetch>About</a></li>
 			</ul>
 		</div>
 	</div><!-- /footer -->
