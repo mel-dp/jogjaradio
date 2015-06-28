@@ -35,6 +35,14 @@ function exitAppPopup() {
 	    console.log('ready');
   };
   
+  document.addEventListener("backbutton", function() {
+            if ( $('.ui-page-active').attr('id') == 'main') {
+                exitAppPopup();
+            } else {
+                history.back();             
+            }
+        }, false);
+        
   var myMedia = null;
   var mediaTimer = null;
   var mediaState = 0;
@@ -167,6 +175,7 @@ function exitAppPopup() {
 <body> 
 
 <div data-role="page" id="main" data-theme="a" data-content-theme="a">
+
 
 	<div data-role="header" data-position="fixed" data-theme="a" data-content-theme="a">
 		<h1>Dirty P Radio</h1>
