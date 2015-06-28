@@ -84,7 +84,7 @@ function exitAppPopup() {
   							textonly: false,
   							html: ''
   					});
-//  				       	document.getElementById('audio_position').innerHTML = 'buffering';
+  				       	document.getElementById('audio_position').innerHTML = 'buffering';
   						$('#play .ui-btn-text').text("P A U S E");
   					} else if(status == Media.MEDIA_RUNNING) {
   						console.log("MEDIA_RUNNING");
@@ -115,13 +115,13 @@ function exitAppPopup() {
                       // success callback
                       function(position) {
                           if (mediaState == 2 && position > -1) {
-//                          	document.getElementById('audio_position').innerHTML = position + '/' + myMedia.getDuration() + ' secs.';
+                          	document.getElementById('audio_position').innerHTML = position + '/' + myMedia.getDuration() + ' secs.';
                           }
                       },
                       // error callback
                       function(e) {
                           console.log("Error getting pos=" + e);
-//                      	document.getElementById('audio_position').innerHTML = "Error: " + e;
+                      	document.getElementById('audio_position').innerHTML = "Error: " + e;
                       }
                   );
               }, 1000);
